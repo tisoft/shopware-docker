@@ -1,0 +1,19 @@
+#!/bin/bash
+set -e
+
+if [ ! -f "/var/www/html/shopware.php" ]; then
+  echo 'Unpacking shopware'
+  unzip -d /var/www/html /shopware.zip
+fi
+
+echo 'Fixing permissions'
+cd /var/www/html && \
+chown www-data:www-data -R * .* && \
+chmod 755 config.php && \
+chmod -R 755 var && \
+chmod -R 755 web && \
+chmod -R 755 files && \
+chmod -R 755 media && \
+chmod -R 755 engine/Shopware/Plugins/Community
+
+exec /usr/local/bin/apache2-foreground
