@@ -26,7 +26,7 @@ RUN echo "memory_limit = 256M">/usr/local/etc/php/conf.d/30-memory.ini \
 
 RUN a2enmod rewrite
 
-RUN wget http://releases.s3.shopware.com.s3.amazonaws.com/install_5.2.5_cc3b6e432af2144fdd4c5e8e1b28cda0398ef7f4.zip -O /shopware.zip
+RUN wget http://releases.s3.shopware.com.s3.amazonaws.com/install_5.4.1_00a0b805318ebc649726675b82db56d7bd308bd2.zip -O /shopware.zip
 
 COPY shopware-foreground /usr/local/bin/
 CMD ["shopware-foreground"]
