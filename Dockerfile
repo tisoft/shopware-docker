@@ -1,4 +1,4 @@
-FROM php:5-apache
+FROM php:7-apache
 MAINTAINER Markus Heberling <markus@tisoft.de>
 run apt-get update && apt-get install -y wget unzip && apt-get clean
 
